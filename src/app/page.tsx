@@ -1,7 +1,7 @@
-import { CiUser } from 'react-icons/ci';
 import { Input } from './components/Input';
 import { SettingsTabs } from './components/SettingsTabs';
-import { MdOutlineCloudUpload, MdOutlineEmail } from 'react-icons/md';
+import { MdOutlineEmail } from 'react-icons/md';
+import { FileInput } from './components/Form/FileInput';
 
 export default function Home() {
   return (
@@ -38,7 +38,7 @@ export default function Home() {
           className='mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200'
         >
           {/* Name */}
-          <div className='grid-cols-form grid gap-3'>
+          <div className='grid grid-cols-form gap-3'>
             <label
               htmlFor='firstName'
               className='text-sm font-medium text-zinc-700'
@@ -55,7 +55,7 @@ export default function Home() {
             </div>
           </div>
           {/* email */}
-          <div className='grid-cols-form grid gap-3 pt-5'>
+          <div className='grid grid-cols-form gap-3 pt-5'>
             <label
               htmlFor='email'
               className='text-sm font-medium text-zinc-700'
@@ -76,7 +76,7 @@ export default function Home() {
             </div>
           </div>
           {/* photo */}
-          <div className='grid-cols-form grid gap-3 pt-5'>
+          <div className='grid grid-cols-form gap-3 pt-5'>
             <label
               htmlFor='photo'
               className=' text-sm font-medium text-zinc-700'
@@ -86,27 +86,16 @@ export default function Home() {
                 This will be displayed on your profile.
               </span>
             </label>
-            <div className='flex items-start gap-5'>
-              <div className='flex h-16 w-16 items-center justify-center rounded-full bg-violet-50'>
-                <CiUser className='h-8 w-8 text-violet-500' />
-              </div>
-              <label
-                htmlFor='photo'
-                className='flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm'
-              >
-                <div className='border-6 rounded-full border-zinc-50 bg-zinc-100 p-2'>
-                  <MdOutlineCloudUpload className='h-5 w-5 text-zinc-600' />
-                </div>
-                <div className='flex flex-col items-center gap-1'>
-                  <span>Click to upload or drag and drop</span>
-                  <span>SVG, PNG JPG or GIF (max. 800x400px)</span>
-                </div>
-              </label>
-              <input type='file' className='sr-only' id='photo' />
+            <div>
+              <FileInput.Root className='flex items-start gap-5'>
+                <FileInput.ImagePreview />
+                <FileInput.Trigger />
+                <FileInput.Control />
+              </FileInput.Root>
             </div>
           </div>
           {/* role */}
-          <div className='grid-cols-form grid gap-3 pt-5'>
+          <div className='grid grid-cols-form gap-3 pt-5'>
             <label htmlFor='role' className='text-sm font-medium text-zinc-700'>
               Role
             </label>
@@ -117,7 +106,7 @@ export default function Home() {
             </div>
           </div>
           {/* country */}
-          <div className='grid-cols-form grid gap-3 pt-5'>
+          <div className='grid grid-cols-form gap-3 pt-5'>
             <label
               htmlFor='country'
               className='text-sm font-medium text-zinc-700'
@@ -127,7 +116,7 @@ export default function Home() {
             <div className='grid grid-cols-2 gap-6'></div>
           </div>
           {/* timezone */}
-          <div className='grid-cols-form grid gap-3 pt-5'>
+          <div className='grid grid-cols-form gap-3 pt-5'>
             <label
               htmlFor='timezone'
               className='text-sm font-medium text-zinc-700'
@@ -137,7 +126,7 @@ export default function Home() {
             <div className='grid grid-cols-2 gap-6'></div>
           </div>
           {/* bio */}
-          <div className='grid-cols-form grid gap-3 pt-5'>
+          <div className='grid grid-cols-form gap-3 pt-5'>
             <label htmlFor='bio' className=' text-sm font-medium text-zinc-700'>
               Bio
               <span className='mt-0.5 block text-sm font-normal text-zinc-500'>
@@ -146,7 +135,7 @@ export default function Home() {
             </label>
           </div>
           {/* portifolio and projects */}
-          <div className='grid-cols-form grid gap-3 pt-5'>
+          <div className='grid grid-cols-form gap-3 pt-5'>
             <label
               htmlFor='project'
               className=' text-sm font-medium text-zinc-700'
@@ -156,6 +145,10 @@ export default function Home() {
                 Share a few snippets of your work.
               </span>
             </label>
+            <FileInput.Root>
+              <FileInput.Trigger />
+              <FileInput.Control multiple />
+            </FileInput.Root>
           </div>
           <div className='flex items-center justify-end gap-2 pt-5'>
             <button
