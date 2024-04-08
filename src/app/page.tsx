@@ -2,6 +2,7 @@ import { Input } from './components/Input';
 import { SettingsTabs } from './components/SettingsTabs';
 import { MdOutlineEmail } from 'react-icons/md';
 import { FileInput } from './components/Form/FileInput';
+import { Select } from './components/Form/Select';
 
 export default function Home() {
   return (
@@ -113,7 +114,9 @@ export default function Home() {
             >
               Country
             </label>
-            <div className='grid grid-cols-2 gap-6'></div>
+            <div className='grid grid-cols-2 gap-6'>
+              <Select />
+            </div>
           </div>
           {/* timezone */}
           <div className='grid grid-cols-form gap-3 pt-5'>
