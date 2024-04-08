@@ -3,6 +3,10 @@ import { SettingsTabs } from './components/SettingsTabs';
 import { MdOutlineEmail } from 'react-icons/md';
 import { FileInput } from './components/Form/FileInput';
 import { Select } from './components/Form/Select';
+import { SelectItem } from './components/Form/Select/SelectItem';
+import { BiBold, BiItalic, BiLink, BiListUl } from 'react-icons/bi';
+import { RiListOrdered } from 'react-icons/ri';
+import { Textarea } from './components/Form/TextArea';
 
 export default function Home() {
   return (
@@ -115,7 +119,10 @@ export default function Home() {
               Country
             </label>
             <div className='grid grid-cols-2 gap-6'>
-              <Select />
+              <Select placeholder='Select a country'>
+                <SelectItem value='br' text='Brazil' />
+                <SelectItem value='us' text='United State' />
+              </Select>
             </div>
           </div>
           {/* timezone */}
@@ -126,7 +133,14 @@ export default function Home() {
             >
               Timezone
             </label>
-            <div className='grid grid-cols-2 gap-6'></div>
+            <div className='grid grid-cols-2 gap-6'>
+              <Select placeholder='Select a timezone'>
+                <SelectItem
+                  value='utc-8'
+                  text='Pacific Standard Time (UTC-08:00'
+                />
+              </Select>
+            </div>
           </div>
           {/* bio */}
           <div className='grid grid-cols-form gap-3 pt-5'>
@@ -136,6 +150,55 @@ export default function Home() {
                 Write a short instroduction.
               </span>
             </label>
+            <div className='space-y-3'>
+              <div className='grid grid-cols-2 gap-3'>
+                <Select placeholder='' defaultValue='normal'>
+                  <SelectItem
+                    defaultChecked
+                    value='normal'
+                    text='Normal text'
+                  />
+                  <SelectItem value='md' text='Marckdown' />
+                </Select>
+
+                <div className='flex items-center gap-1'>
+                  <button
+                    type='button'
+                    className='rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <BiBold className='h-4 w-4 text-zinc-500' />
+                  </button>
+                  <button
+                    type='button'
+                    className='rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <BiItalic className='h-4 w-4 text-zinc-500' />
+                  </button>
+                  <button
+                    type='button'
+                    className='rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <BiLink className='h-4 w-4 text-zinc-500' />
+                  </button>
+                  <button
+                    type='button'
+                    className='rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <BiListUl className='h-4 w-4 text-zinc-500' />
+                  </button>
+                  <button
+                    type='button'
+                    className='rounded-md p-2 hover:bg-zinc-50'
+                  >
+                    <RiListOrdered className='h-4 w-4 text-zinc-500' />
+                  </button>
+                </div>
+              </div>
+              <Textarea
+                id='bio'
+                defaultValue="I'm Product design based in ..."
+              ></Textarea>
+            </div>
           </div>
           {/* portifolio and projects */}
           <div className='grid grid-cols-form gap-3 pt-5'>

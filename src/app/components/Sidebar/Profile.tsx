@@ -2,7 +2,8 @@ import { IoIosLogOut } from 'react-icons/io';
 
 export const Profile = () => {
   return (
-    <div className='grid-cols-profile grid items-center gap-3'>
+    // eslint-disable-next-line @next/next/no-img-element
+    <div className='grid grid-cols-profile items-center gap-3'>
       <img
         src='https://github.com/gilsonrusso.png'
         alt='foto_user'
