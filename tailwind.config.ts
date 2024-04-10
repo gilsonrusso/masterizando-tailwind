@@ -20,6 +20,32 @@ const config: Config = {
         violet: {
           25: '#fcfaff'
         }
+      },
+      keyframes: {
+        'fade-in-down': {
+            '0%': {
+                opacity: '0',
+                transform: 'translateY(-2px)'
+            },
+            '100%': {
+                opacity: '1',
+                transform: 'translateY(0)'
+            },
+        },
+        'fade-in-up': {
+            '100%': {
+                opacity: '1',
+                transform: 'translateY(0)'
+            },
+            '0%': {
+                opacity: '0',
+                transform: 'translateY(-10px)'
+            },
+        }
+    },
+      animation: {
+        'fade-in-up': 'fade-in-up 0.5s cubic-bezier(0.16, 0.3, 1)',
+        'fade-in-down': 'fade-in-down 0.5s ease-out'
       }
     },
   },
