@@ -1,12 +1,8 @@
 'use client';
 
-import { MdOutlineCloudUpload } from 'react-icons/md';
-import { useFileInput } from './Root';
-import { formatBits } from '@/app/utils/formatByts';
-import { IoIosLogOut, IoIosTrash } from 'react-icons/io';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
-import { Button } from '../../Button';
 import { FileItem } from './FileItem';
+import { useFileInput } from './Root';
 
 export function FileList() {
   const { files } = useFileInput();
@@ -16,7 +12,14 @@ export function FileList() {
   return (
     <div ref={parent} className='mt-4 space-y-3'>
       {files.map((file) => {
-        return <FileItem key={file.name} name={file.name} size={file.size} />;
+        return (
+          <FileItem
+            key={file.name}
+            name={file.name}
+            size={file.size}
+            state='error'
+          />
+        );
       })}
     </div>
   );
