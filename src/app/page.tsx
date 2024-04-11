@@ -7,6 +7,7 @@ import { SelectItem } from './components/Form/Select/SelectItem';
 import { BiBold, BiItalic, BiLink, BiListUl } from 'react-icons/bi';
 import { RiListOrdered } from 'react-icons/ri';
 import { Textarea } from './components/Form/TextArea';
+import { Button } from './components/Button';
 
 export default function Home() {
   return (
@@ -22,19 +23,12 @@ export default function Home() {
             </span>
           </div>
           <div className='flex items-center gap-2'>
-            <button
-              type='button'
-              className='rounded-lg border border-e-zinc-300 px-4 py-4 text-sm font-semibold text-zinc-700 shadow-sm hover:bg-zinc-50'
-            >
+            <Button variant='outline' type='button'>
               Cancel
-            </button>
-            <button
-              type='submit'
-              form='settings'
-              className='rounded-lg bg-violet-600 px-4 py-4 text-sm font-semibold text-white shadow-sm hover:bg-violet-700'
-            >
+            </Button>
+            <Button variant='primary' type='submit' form='settings'>
               Save
-            </button>
+            </Button>
           </div>
         </div>
         <form
@@ -162,36 +156,21 @@ export default function Home() {
                 </Select>
 
                 <div className='flex items-center gap-1'>
-                  <button
-                    type='button'
-                    className='rounded-md p-2 hover:bg-zinc-50'
-                  >
+                  <Button type='button' variant='ghost'>
                     <BiBold className='h-4 w-4 text-zinc-500' />
-                  </button>
-                  <button
-                    type='button'
-                    className='rounded-md p-2 hover:bg-zinc-50'
-                  >
+                  </Button>
+                  <Button type='button' variant='ghost'>
                     <BiItalic className='h-4 w-4 text-zinc-500' />
-                  </button>
-                  <button
-                    type='button'
-                    className='rounded-md p-2 hover:bg-zinc-50'
-                  >
+                  </Button>
+                  <Button type='button' variant='ghost'>
                     <BiLink className='h-4 w-4 text-zinc-500' />
-                  </button>
-                  <button
-                    type='button'
-                    className='rounded-md p-2 hover:bg-zinc-50'
-                  >
+                  </Button>
+                  <Button type='button' variant='ghost'>
                     <BiListUl className='h-4 w-4 text-zinc-500' />
-                  </button>
-                  <button
-                    type='button'
-                    className='rounded-md p-2 hover:bg-zinc-50'
-                  >
+                  </Button>
+                  <Button type='button' variant='ghost'>
                     <RiListOrdered className='h-4 w-4 text-zinc-500' />
-                  </button>
+                  </Button>
                 </div>
               </div>
               <Textarea
@@ -218,18 +197,12 @@ export default function Home() {
             </FileInput.Root>
           </div>
           <div className='flex items-center justify-end gap-2 pt-5'>
-            <button
-              type='button'
-              className='rounded-lg border border-e-zinc-300 px-4 py-4 text-sm font-semibold text-zinc-700 shadow-sm hover:bg-zinc-50'
-            >
+            <Button variant='outline' type='button'>
               Cancel
-            </button>
-            <button
-              type='submit'
-              className='rounded-lg bg-violet-600 px-4 py-4 text-sm font-semibold text-white shadow-sm hover:bg-violet-700'
-            >
+            </Button>
+            <Button variant='primary' type='submit'>
               Save
-            </button>
+            </Button>
           </div>
         </form>
       </div>

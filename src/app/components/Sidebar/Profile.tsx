@@ -1,4 +1,5 @@
 import { IoIosLogOut } from 'react-icons/io';
+import { Button } from '../Button';
 
 export const Profile = () => {
   return (
@@ -17,9 +18,9 @@ export const Profile = () => {
           gilsonrusso@outlook.com
         </span>
       </div>
-      <button type='button' className='ml-auto rounded-md p-2 hover:bg-zinc-50'>
+      <Button type='button' variant='ghost'>
         <IoIosLogOut className='h-5 w-5 text-zinc-500' />
-      </button>
+      </Button>
     </div>
   );
 };
