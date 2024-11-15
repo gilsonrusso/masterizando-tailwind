@@ -8,7 +8,7 @@ export const Trigger = () => {
   return (
     <label
       htmlFor={id}
-      className='hover:bg-violet-25 flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm hover:border-violet-200'
+      className='flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm hover:border-violet-200 hover:bg-violet-25'
     >
       <div className='rounded-full border-6 border-zinc-50 bg-zinc-100 p-2 hover:border-violet-50 hover:bg-violet-100'>
         <MdOutlineCloudUpload className='h-5 w-5 rounded-full text-zinc-600 group-hover:bg-violet-500' />
