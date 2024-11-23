@@ -39,8 +39,6 @@ jobs:
           tags: |
             gilsonrusso/master-tailwind:v${{ github.run_number }}
             gilsonrusso/master-tailwind:latest
-          context: .
-          file: ./DockerFile
 
   deploy:
     name: Deploy to GitHub
