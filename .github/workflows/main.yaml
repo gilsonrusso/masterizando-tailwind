@@ -34,7 +34,7 @@ jobs:
   deploy:
     name: Deploy to GitHub
     runs-on: ubuntu-latest
-    needs: [release]
+    needs: [build]
     steps:
       - name: Checkout Deploy Repository
         uses: actions/checkout@v4
