@@ -57,14 +57,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           repositrory: gilsonrusso/k8s-argocd-master-tailwind
-          token: ${{ secret.PAT_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           path: repo-deploy
           ref: main
 
       - name: Update a Image on Manifast K8S
         run: |
           sed -i 's|image': gilsonrusso/master-tailwind.*|image: gilsonrusso/master-tailwind:latest'
-      
+
       - name: Commit and Push Updated
         working-directory: repo-deploy
         run: |
