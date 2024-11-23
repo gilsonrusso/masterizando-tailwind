@@ -53,10 +53,21 @@ jobs:
           path: repo-deploy
           ref: main
 
+      - name: Display Deployment File Before Update
+        working-directory: repo-deploy
+        run: cat k8s/deployment.yaml
+
+      - name: List Files in Repo
+        run: ls -R repo-deploy
+
       - name: Update Image in K8s Manifest
         working-directory: repo-deploy
         run: |
-          sed -i 's|image: gilsonrusso/master-tailwind:.*|image: gilsonrusso/master-tailwind:latest|' k8s/deployment.yaml
+          sed -i 's|image: gilsonrusso/master-tailwind:[^ ]*|image: gilsonrusso/master-tailwind:latest|' k8s/deployment.yaml
+
+      - name: Check Git Status
+        working-directory: repo-deploy
+        run: git status
 
       - name: Commit and Push Updates
         working-directory: repo-deploy
@@ -66,4 +77,3 @@ jobs:
           git add .
           git commit -m "Update of Image to v${{ github.run_number }}"
           git push origin main
-
