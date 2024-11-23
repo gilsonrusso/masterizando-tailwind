@@ -18,7 +18,7 @@ jobs:
 
       - name: Docker Build Image
         run: |
-          docker build -t gilsonrusso/master-tailwind:latest -f Dockerfile.prod .
+          docker build -t gilsonrusso/master-tailwind:latest -f Dockerfile .
 
   release:
     name: Create Release
@@ -47,7 +47,7 @@ jobs:
             gilsonrusso/master-tailwind:v${{ github.run_number }}
             gilsonrusso/master-tailwind:latest
           context: .
-          file: ./DockerFile.prod
+          file: ./DockerFile
   deploy:
     name: Deploy to GitHub
     runs-on: ubuntu-latest
