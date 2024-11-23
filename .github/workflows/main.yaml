@@ -53,15 +53,17 @@ jobs:
           path: repo-deploy
           ref: main
 
-      - name: Update a Image on Manifast K8S
-        run: |
-          sed -i 's|image': gilsonrusso/master-tailwind.*|image: gilsonrusso/master-tailwind:latest'
-
-      - name: Commit and Push Updated
+      - name: Update Image in K8s Manifest
         working-directory: repo-deploy
         run: |
-          git config --global user.email "${{ github.actor_id }}+github-actions[bot]@users.noreply.github.com"
+          sed -i 's|image: gilsonrusso/master-tailwind:.*|image: gilsonrusso/master-tailwind:latest|' k8s/deployment.yaml
+
+      - name: Commit and Push Updates
+        working-directory: repo-deploy
+        run: |
+          git config --global user.email "${{ github.actor }}+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           git add .
           git commit -m "Update of Image to v${{ github.run_number }}"
           git push origin main
+
